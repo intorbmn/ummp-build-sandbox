@@ -1,0 +1,30 @@
+# Converted from fabric.mod.json by UMMP.
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "demowidget"
+version = "${file.jarVersion}"
+displayName = "Demo Widget"
+description = '''
+UMMP demonstration mod (synthetic).
+'''
+authors = "UMMP"
+
+[[mixins]]
+config = "demowidget.mixins.json"
+
+[[dependencies.demowidget]]
+modId = "neoforge"
+type = "required"
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.demowidget]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"

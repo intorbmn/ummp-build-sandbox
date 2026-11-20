@@ -1,0 +1,118 @@
+# Technology detection rules (Phase 9, ADR 0012). One adapter per rule.
+# level:    detect | report | migrate  (how far UMMP goes for this technology)
+# handling: auto | assisted | manual   (who deals with what is found)
+# A rule matches a file by extension (`files`) or exact name (`names`); if `any` is set, one
+# of its patterns must also occur in the file. One finding per rule: the first match, plus
+# the number of other matching files.
+
+[[rule]]
+tech = "kotlin"
+level = "migrate"
+handling = "auto"
+message = "Kotlin sources: API renames are applied like Java"
+files = ["kt"]
+
+[[rule]]
+tech = "scala"
+level = "migrate"
+handling = "auto"
+message = "Scala sources: API renames are applied (operators and implicits are not checked)"
+files = ["scala"]
+
+[[rule]]
+tech = "groovy"
+level = "migrate"
+handling = "auto"
+message = "Groovy sources: API renames are applied (GString expressions are not renamed)"
+files = ["groovy"]
+
+[[rule]]
+tech = "c-cpp"
+level = "detect"
+handling = "manual"
+message = "C/C++ native code: not built or migrated; rebuild it for every target platform"
+files = ["c", "cc", "cpp", "h", "hpp"]
+names = ["CMakeLists.txt"]
+
+[[rule]]
+tech = "rust-native"
+level = "detect"
+handling = "manual"
+message = "Rust native code: not built or migrated; rebuild it for every target platform"
+names = ["Cargo.toml"]
+
+[[rule]]
+tech = "jni-jna"
+level = "report"
+handling = "manual"
+message = "JNI/JNA: native methods or library loading; see the native report for missing platforms"
+files = ["java", "kt"]
+any = ["public native ", "private native ", "protected native ", "static native ", "System.loadLibrary(", "Native.load(", "com.sun.jna."]
+
+[[rule]]
+tech = "shader"
+level = "detect"
+handling = "manual"
+message = "Shaders: not migrated; check #version, uniforms and samplers against the target version"
+files = ["glsl", "fsh", "vsh", "vert", "frag", "comp"]
+
+[[rule]]
+tech = "rendering"
+level = "detect"
+handling = "manual"
+message = "Rendering code: rendering APIs change often between versions; review by hand"
+files = ["java", "kt"]
+any = ["com.mojang.blaze3d", "RenderSystem.", "BufferBuilder", "VertexConsumer", "GlStateManager"]
+
+[[rule]]
+tech = "networking"
+level = "detect"
+handling = "assisted"
+message = "Custom networking: packet registration differs per loader and version; ai-assist can help"
+files = ["java", "kt"]
+any = ["CustomPacketPayload", "ServerPlayNetworking", "ClientPlayNetworking", "SimpleChannel", "PayloadRegistrar", "FriendlyByteBuf"]
+
+[[rule]]
+tech = "classloader"
+level = "detect"
+handling = "manual"
+message = "Custom class loading: may break with loader changes; also check the risk scan"
+files = ["java", "kt"]
+any = ["extends ClassLoader", "URLClassLoader", "defineClass("]
+
+[[rule]]
+tech = "mixin-advanced"
+level = "migrate"
+handling = "assisted"
+message = "Advanced Mixin injectors: member renames are applied when the KB has method/field mappings"
+files = ["java", "kt"]
+any = ["@Redirect", "@ModifyVariable", "@ModifyArg", "@ModifyConstant", "@WrapOperation", "@Overwrite"]
+
+[[rule]]
+tech = "access-widener"
+level = "migrate"
+handling = "auto"
+message = "Fabric access widener: converted to an access transformer when changing loader"
+files = ["accesswidener"]
+
+[[rule]]
+tech = "access-transformer"
+level = "migrate"
+handling = "auto"
+message = "(Neo)Forge access transformer: converted to an access widener when changing loader"
+names = ["accesstransformer.cfg"]
+
+[[rule]]
+tech = "coremod"
+level = "detect"
+handling = "manual"
+message = "Forge JS coremods: not migrated; consider rewriting as Mixins"
+names = ["coremods.json"]
+
+[[rule]]
+tech = "multi-loader"
+level = "detect"
+handling = "assisted"
+message = "Multi-loader library (Architectury): keep the common/platform split when porting"
+files = ["java", "kt", "gradle", "kts"]
+any = ["dev.architectury"]

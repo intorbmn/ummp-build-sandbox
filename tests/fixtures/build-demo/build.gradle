@@ -1,0 +1,10 @@
+// Offline stand-in for a mod project: plain `java` plugin, no repositories, and a
+// `runServer` task that starts a fake dedicated server (prints "Done (", stops on "stop").
+plugins { id 'java' }
+
+tasks.register('runServer', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.example.demo.FakeServer'
+    standardInput = System.in
+    workingDir = file('run')
+}

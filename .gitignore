@@ -1,0 +1,9 @@
+/target/
+**/*.rs.bk
+Cargo.lock
+!ui/src-tauri/Cargo.lock
+/ui/node_modules/
+/ui/dist/
+/ui/src-tauri/target/
+/ui/test-results/
+/ui/playwright-report/

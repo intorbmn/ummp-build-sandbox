@@ -1,0 +1,38 @@
+name: Desktop release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ummp/desktop-release-test]
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    env:
+      RUSTUP_TOOLCHAIN: stable
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install stable Rust
+        run: rustup toolchain install stable --profile minimal --component clippy --component rustfmt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ui/package-lock.json
+      - name: Install UI dependencies
+        working-directory: ui
+        run: npm ci
+      - name: Build Windows installers
+        working-directory: ui
+        run: npx tauri build
+      - name: Upload MSI and NSIS installers
+        uses: actions/upload-artifact@v4
+        with:
+          name: ummp-windows-installers
+          if-no-files-found: error
+          path: |
+            ui/src-tauri/target/release/bundle/msi/*.msi
+            ui/src-tauri/target/release/bundle/nsis/*.exe

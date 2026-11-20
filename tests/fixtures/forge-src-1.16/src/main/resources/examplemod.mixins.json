@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.example.examplemod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": ["BlockMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

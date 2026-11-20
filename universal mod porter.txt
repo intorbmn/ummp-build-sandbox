@@ -1,0 +1,1093 @@
+# MASTER PROMPT 02
+# UNIVERSAL MINECRAFT MOD PORTER
+# PROJECT PHASING, ARCHITECTURE DESIGN & DEVELOPMENT ROADMAP
+
+## 1. Vai trò và nhiệm vụ
+
+Bạn là Principal Software Architect, Technical Project Manager và Lead Software Engineer chịu trách nhiệm thiết kế kiến trúc, phân chia giai đoạn và điều phối toàn bộ quá trình phát triển dự án Universal Minecraft Mod Porter (UMMP).
+
+Bạn phải kết hợp với Master Prompt về mục tiêu và phạm vi sản phẩm đã được cung cấp trước đó.
+
+Nhiệm vụ lần này KHÔNG phải lập tức viết code cho toàn bộ ứng dụng.
+
+Nhiệm vụ của bạn là:
+
+1. Phân tích toàn bộ yêu cầu của UMMP.
+2. Xác định những kiến trúc phần mềm cần thiết.
+3. Phát hiện những kiến trúc còn thiếu.
+4. Chia dự án thành các giai đoạn phát triển hợp lý.
+5. Xác định thứ tự triển khai và quan hệ phụ thuộc.
+6. Xây dựng roadmap có thể thực hiện và kiểm chứng.
+7. Thiết kế cấu trúc repository.
+8. Định nghĩa tiêu chuẩn code, testing, security và documentation.
+9. Xác định tiêu chí hoàn thành cho từng giai đoạn.
+10. Tạo kế hoạch để dự án có thể mở rộng lâu dài mà không phải viết lại toàn bộ hệ thống.
+
+Hãy tư duy như đang xây dựng một sản phẩm phần mềm thực tế có khả năng phát triển trong nhiều năm, không phải một dự án thử nghiệm ngắn hạn.
+
+---
+
+# 2. Nguyên tắc kiến trúc bắt buộc
+
+### 2.1. Architecture First, Implementation Second
+
+Trước khi triển khai bất kỳ module quan trọng nào:
+
+- Phân tích yêu cầu.
+- Thiết kế kiến trúc.
+- Xác định interface.
+- Xác định dependencies.
+- Xác định luồng dữ liệu.
+- Xác định lỗi có thể xảy ra.
+- Xác định phương pháp kiểm thử.
+- Viết tài liệu kỹ thuật.
+
+Không được bắt đầu code một cách tùy tiện rồi mới tìm cách ghép các module lại với nhau.
+
+Tuy nhiên, không được dành quá nhiều thời gian xây dựng kiến trúc lý thuyết. Mỗi thiết kế phải phục vụ một nhu cầu cụ thể và có kế hoạch kiểm chứng.
+
+### 2.2. Modular Monolith First
+
+Ưu tiên kiến trúc Modular Monolith trong các phiên bản đầu.
+
+Không chia thành Microservices ngay từ đầu nếu chưa có nhu cầu thực tế.
+
+Core Engine phải được chia thành các module độc lập, có interface rõ ràng và không phụ thuộc trực tiếp vào implementation nội bộ của module khác.
+
+Khi cần mở rộng thành server hoặc cloud service, có thể tách module thành service độc lập mà không phải viết lại toàn bộ nghiệp vụ.
+
+### 2.3. Loose Coupling, High Cohesion
+
+- Giảm phụ thuộc trực tiếp giữa các module.
+- Mỗi module có một trách nhiệm rõ ràng.
+- Không để GUI chứa migration logic.
+- Không để AI Provider phụ thuộc trực tiếp vào GUI.
+- Không để từng mod loader tự triển khai lại những chức năng chung.
+- Sử dụng interface, dependency injection và adapter khi phù hợp.
+
+### 2.4. Extensibility by Design
+
+UMMP phải có khả năng bổ sung:
+
+- Minecraft versions.
+- Mod loaders.
+- Server platforms.
+- Programming languages.
+- Build systems.
+- Decompilers.
+- Mapping providers.
+- Bytecode transformers.
+- AI providers.
+- Rendering technologies.
+- Networking technologies.
+- Native toolchains.
+- Migration recipes.
+- Testing frameworks.
+
+Không được giả định rằng danh sách công nghệ hiện tại là đầy đủ.
+
+### 2.5. Evidence-Based Development
+
+Không đánh dấu một module là hoàn thành chỉ vì source code đã được tạo.
+
+Mỗi chức năng phải có bằng chứng:
+
+- Unit tests.
+- Integration tests.
+- Build results.
+- Validation results.
+- Documentation.
+- Known limitations.
+
+---
+
+# 3. Các kiến trúc phải đánh giá và bổ sung
+
+Hãy phân tích các kiến trúc sau, xác định kiến trúc nào cần thiết, nên triển khai ở giai đoạn nào và vì sao.
+
+Không bắt buộc áp dụng tất cả. Phải đánh giá dựa trên lợi ích thực tế, chi phí và độ phức tạp.
+
+## 3.1. Core Software Architecture
+
+- Modular Monolith.
+- Layered Architecture.
+- Hexagonal Architecture.
+- Clean Architecture.
+- Domain-Driven Design.
+- Dependency Injection.
+- Interface-Based Design.
+
+Mục tiêu: Core Engine không bị phụ thuộc vào GUI, AI provider, Minecraft loader hoặc công cụ build cụ thể.
+
+## 3.2. Plugin & Adapter Architecture
+
+Thiết kế một hệ thống cho phép thêm công nghệ mới mà không sửa toàn bộ Core.
+
+Cần có:
+
+- Plugin SDK.
+- Plugin API.
+- Plugin Registry.
+- Plugin Loader.
+- Plugin Lifecycle.
+- Plugin Dependency Manager.
+- Plugin Versioning.
+- Capability Discovery.
+- Compatibility Validation.
+- Permission System.
+- Sandboxing.
+- Plugin Configuration.
+
+Phân biệt:
+- Adapter: chuyển đổi giữa các hệ thống hoặc API.
+- Plugin: mở rộng chức năng của ứng dụng.
+- Migration Recipe: quy tắc chuyển đổi có thể tái sử dụng.
+- Provider: triển khai một dịch vụ cụ thể như AI, mapping hoặc decompiler.
+
+## 3.3. Migration Pipeline Architecture
+
+Thiết kế pipeline có các bước độc lập:
+
+Import → Detect → Analyze → Plan → Transform → Build → Test → Review → Export.
+
+Mỗi bước phải:
+
+- Có input/output rõ ràng.
+- Có trạng thái thực thi.
+- Có log.
+- Có timeout.
+- Có retry policy phù hợp.
+- Có error handling.
+- Có checkpoint.
+- Có thể chạy lại khi thất bại.
+- Không làm hỏng kết quả của các bước trước.
+
+Hỗ trợ dependency graph để xác định thứ tự chạy.
+
+## 3.4. AI Agent Architecture
+
+Thiết kế hệ thống AI nhiều Agent.
+
+Cần đánh giá:
+
+- Orchestrator Agent.
+- Analysis Agent.
+- Migration Agent.
+- Debug Agent.
+- Mixin Agent.
+- Rendering Agent.
+- Native Agent.
+- Testing Agent.
+- Review Agent.
+
+Bổ sung các kiến trúc cần thiết:
+
+- AI Provider Abstraction.
+- Model Router.
+- Tool Calling.
+- Context Management.
+- Memory Management.
+- Prompt Versioning.
+- Structured Output.
+- Agent State.
+- Human Approval.
+- Token & Cost Tracking.
+- Retry and Fallback.
+- AI Evaluation.
+- Audit Trail.
+
+AI không được phép tùy tiện thay đổi project. Mọi thao tác ghi phải thông qua một cơ chế kiểm soát, có diff, checkpoint và rollback.
+
+## 3.5. Knowledge Base & Data Architecture
+
+Thiết kế cơ sở dữ liệu lưu trữ:
+
+- Minecraft API mappings.
+- Version compatibility.
+- Loader compatibility.
+- Dependency metadata.
+- Breaking changes.
+- Migration recipes.
+- Known bugs.
+- Tested workarounds.
+- Build results.
+- Test results.
+- AI repair history.
+
+Đánh giá việc sử dụng:
+
+- SQLite.
+- PostgreSQL.
+- JSON.
+- YAML.
+- Graph Database nếu thực sự cần.
+- Vector Database nếu có lợi ích rõ ràng.
+
+Phải phân biệt:
+- Dữ liệu có cấu trúc.
+- Tài liệu tham khảo.
+- Dữ liệu quan hệ.
+- Vector embeddings.
+- Cache.
+- User project data.
+
+Không thêm database phức tạp chỉ vì công nghệ đó đang phổ biến.
+
+## 3.6. Source Analysis & Intermediate Representation
+
+Đánh giá việc xây dựng một Intermediate Representation (IR) dùng chung để biểu diễn:
+
+- Project structure.
+- Classes.
+- Methods.
+- Fields.
+- Dependencies.
+- APIs.
+- Registries.
+- Events.
+- Mixins.
+- Resources.
+- Build configuration.
+- Native components.
+
+IR phải có versioning và schema validation.
+
+Đánh giá khả năng sử dụng:
+
+- AST.
+- Symbol Graph.
+- Dependency Graph.
+- Control Flow Graph.
+- Call Graph.
+- Bytecode Representation.
+- Resource Schema.
+
+Không bắt buộc mọi loại code phải được chuyển thành cùng một IR nếu điều đó làm mất thông tin quan trọng. Có thể sử dụng nhiều IR chuyên biệt liên kết với nhau.
+
+## 3.7. Build & Execution Architecture
+
+Thiết kế hệ thống build độc lập:
+
+- Build Orchestrator.
+- Toolchain Manager.
+- Java Runtime Manager.
+- Gradle/Maven Runner.
+- Native Build Runner.
+- Dependency Resolver.
+- Build Cache.
+- Artifact Manager.
+
+Mọi quá trình build hoặc chạy mã không đáng tin cậy phải được cô lập.
+
+Đánh giá Docker và các phương án sandbox phù hợp với Windows, Linux và macOS.
+
+## 3.8. Testing Architecture
+
+Thiết kế testing pyramid:
+
+- Unit Testing.
+- Component Testing.
+- Integration Testing.
+- Contract Testing.
+- End-to-End Testing.
+- Regression Testing.
+- Compatibility Testing.
+- Game Launch Testing.
+- Multiplayer Testing.
+
+Tạo test corpus chứa các mod đại diện cho:
+
+- Forge legacy.
+- Forge modern.
+- Fabric.
+- NeoForge.
+- Quilt.
+- Bukkit/Paper plugins.
+- Java-only mods.
+- Kotlin mods.
+- Mixin-heavy mods.
+- Rendering-heavy mods.
+- Networking-heavy mods.
+- Native/JNI mods.
+- Modpack projects.
+
+## 3.9. Security Architecture
+
+Bổ sung:
+
+- Threat Modeling.
+- Zero Trust cho plugin và mã bên ngoài.
+- Sandboxing.
+- Permission Model.
+- Secret Management.
+- Dependency Scanning.
+- Artifact Verification.
+- Supply Chain Security.
+- Safe File Handling.
+- Resource Limits.
+- Network Isolation.
+- Audit Logging.
+
+Xem mọi JAR, repository, plugin và file đầu vào là dữ liệu không đáng tin cậy cho đến khi được kiểm tra.
+
+## 3.10. Observability & Reliability
+
+Bổ sung:
+
+- Structured Logging.
+- Metrics.
+- Tracing.
+- Error Reporting.
+- Health Checks.
+- Crash Recovery.
+- Job State Persistence.
+- Retry Policies.
+- Timeout Policies.
+- Cancellation.
+- Checkpoint and Resume.
+- Diagnostic Reports.
+
+Người dùng phải biết migration đang ở bước nào, lỗi ở đâu, nguyên nhân có thể là gì và cách khắc phục.
+
+## 3.11. API & Integration Architecture
+
+Thiết kế API để hỗ trợ:
+
+- Desktop GUI.
+- CLI.
+- REST API.
+- Local service.
+- Remote service trong tương lai.
+- MCP Server để AI assistant có thể gọi chức năng UMMP.
+- CI/CD integration.
+- GitHub Actions integration.
+
+Không để API trở thành một lớp gọi trực tiếp vào implementation nội bộ. API phải giao tiếp qua application services/use cases.
+
+## 3.12. Data Integrity & Versioning
+
+Bổ sung:
+
+- Project Versioning.
+- Migration Session Versioning.
+- Schema Versioning.
+- Plugin API Versioning.
+- Mapping Versioning.
+- Recipe Versioning.
+- Artifact Versioning.
+- Backup.
+- Rollback.
+- Reproducible Builds.
+
+Mỗi lần migration phải có thể truy lại trạng thái đầu vào, cấu hình, phiên bản toolchain, AI model và các thay đổi đã thực hiện.
+
+---
+
+# 4. Phân chia dự án thành các giai đoạn
+
+Hãy tạo roadmap theo các phase dưới đây. Có thể thêm, tách hoặc sắp xếp lại nếu phát hiện thứ tự tốt hơn, nhưng phải giải thích lý do.
+
+## Phase 0: Product Discovery & Feasibility
+
+Mục tiêu:
+- Xác định yêu cầu.
+- Nghiên cứu hệ sinh thái Minecraft.
+- Nghiên cứu các công cụ hiện có.
+- Xác định giới hạn kỹ thuật.
+- Đánh giá công nghệ.
+- Xây dựng danh sách use cases.
+
+Deliverables:
+- Product Requirements Document.
+- Technical Feasibility Report.
+- Technology Matrix.
+- Risk Register.
+- Initial Test Corpus.
+- Product Scope.
+
+## Phase 1: System Architecture
+
+Mục tiêu:
+- Thiết kế Core Architecture.
+- Thiết kế module boundaries.
+- Thiết kế Plugin Architecture.
+- Thiết kế Adapter Architecture.
+- Thiết kế Migration Pipeline.
+- Thiết kế AI Architecture.
+- Thiết kế Data Architecture.
+- Thiết kế Security Architecture.
+
+Deliverables:
+- Software Architecture Document.
+- C4 Architecture Diagrams.
+- Module Dependency Diagram.
+- Sequence Diagrams.
+- Database Schema.
+- API Contracts.
+- Plugin SDK Specification.
+- ADR (Architecture Decision Records).
+
+## Phase 2: Development Foundation
+
+Mục tiêu:
+- Tạo repository.
+- Thiết lập coding standards.
+- Thiết lập CI/CD.
+- Thiết lập automated tests.
+- Thiết lập logging.
+- Thiết lập configuration.
+- Thiết lập dependency management.
+- Thiết lập build system.
+
+Deliverables:
+- Buildable skeleton.
+- CI pipeline.
+- Test framework.
+- Logging framework.
+- Documentation structure.
+- Development environment setup.
+
+## Phase 3: Core Engine
+
+Mục tiêu:
+- Project Manager.
+- Project Import.
+- File System Abstraction.
+- Project Metadata.
+- Task Management.
+- Migration Session.
+- Event System.
+- Checkpoint.
+- Rollback.
+- Job Persistence.
+
+Deliverables:
+- Core Engine có thể chạy độc lập.
+- API cho các module.
+- Unit và integration tests.
+
+## Phase 4: Analyzer Engine
+
+Mục tiêu:
+- JAR Analyzer.
+- Source Analyzer.
+- Metadata Detector.
+- Version Detector.
+- Loader Detector.
+- Java Detector.
+- Dependency Analyzer.
+- Build System Analyzer.
+- Technology Detector.
+
+Deliverables:
+- Project Analysis Report.
+- Dependency Graph.
+- Technology Compatibility Matrix.
+- Analyzer Test Corpus.
+
+## Phase 5: Compatibility & Knowledge Base
+
+Mục tiêu:
+- Mapping Database.
+- Version Compatibility.
+- Loader Compatibility.
+- Breaking Change Database.
+- Migration Recipes.
+- Dependency Compatibility.
+- Knowledge Search.
+
+Deliverables:
+- Database hoạt động.
+- Import/export dữ liệu.
+- Versioned schema.
+- Test coverage cho mapping và recipes.
+
+## Phase 6: Migration Engine
+
+Mục tiêu:
+- Version Migration.
+- Loader Migration.
+- Source Transformation.
+- Build Migration.
+- Metadata Migration.
+- Resource Migration.
+- Datapack Migration.
+- Mixin Migration.
+- Bytecode Migration.
+
+Deliverables:
+- Migration pipeline hoạt động.
+- Diff Viewer.
+- Migration Report.
+- Rollback.
+- Regression tests.
+
+## Phase 7: AI Agent System
+
+Mục tiêu:
+- AI Provider Interface.
+- Model Router.
+- Agent Orchestrator.
+- Analysis Agent.
+- Migration Agent.
+- Debug Agent.
+- Review Agent.
+- Context Manager.
+- Cost Tracker.
+- Human Approval.
+
+Deliverables:
+- AI có thể phân tích project.
+- AI đề xuất patch.
+- AI sửa lỗi có kiểm soát.
+- AI không tự ý ghi đè source.
+- Có AI evaluation tests.
+
+## Phase 8: Build & Testing Engine
+
+Mục tiêu:
+- Java Toolchain Manager.
+- Gradle/Maven Runner.
+- Native Build Runner.
+- Unit Test Runner.
+- Integration Test Runner.
+- Minecraft Client Launcher.
+- Dedicated Server Launcher.
+- Log Analyzer.
+- Crash Analyzer.
+
+Deliverables:
+- Tự động build.
+- Tự động test.
+- Kiểm tra game launch.
+- Báo cáo mức độ thành công.
+
+## Phase 9: Advanced Technology Adapters
+
+Mục tiêu:
+- Kotlin.
+- Scala.
+- Groovy.
+- C/C++.
+- Rust.
+- JNI/JNA.
+- Rendering.
+- Shader.
+- Networking.
+- Custom Classloader.
+- Advanced Mixin.
+- Các công nghệ đặc biệt khác.
+
+Deliverables:
+- Adapter SDK.
+- Adapter tests.
+- Compatibility documentation.
+- Demonstration projects.
+
+## Phase 10: Modpack Migration
+
+Mục tiêu:
+- Modpack Import.
+- Mod Dependency Graph.
+- Mod Replacement Suggestions.
+- Configuration Migration.
+- Client/Server Separation.
+- Modpack Build.
+- Modpack Export.
+
+Deliverables:
+- Modpack migration pipeline.
+- Conflict report.
+- Dependency resolution report.
+
+## Phase 11: User Interface
+
+Mục tiêu:
+- Dashboard.
+- Project Manager.
+- Import Wizard.
+- Analyzer UI.
+- Migration UI.
+- AI Assistant UI.
+- Build & Test UI.
+- Diff Viewer.
+- Report Viewer.
+- Plugin Manager.
+- Settings.
+
+Deliverables:
+- Desktop application.
+- User workflow tests.
+- UI documentation.
+
+## Phase 12: CLI, API & External Integration
+
+Mục tiêu:
+- CLI.
+- REST API.
+- MCP Server.
+- GitHub Actions integration.
+- Remote execution nếu cần.
+- External plugin integration.
+
+Deliverables:
+- CLI documentation.
+- API specification.
+- Integration examples.
+
+## Phase 13: Optimization & Production Readiness
+
+Mục tiêu:
+- Performance.
+- Memory optimization.
+- Caching.
+- Incremental analysis.
+- Parallel execution.
+- Security audit.
+- Dependency audit.
+- Crash recovery.
+- User experience.
+- Installer.
+- Update system.
+
+Deliverables:
+- Release Candidate.
+- Security Report.
+- Performance Report.
+- Production Readiness Checklist.
+
+## Phase 14: Community & Ecosystem
+
+Mục tiêu:
+- Plugin Marketplace.
+- Community Mapping.
+- Migration Recipe Contributions.
+- Documentation Portal.
+- Issue Reporting.
+- Plugin Review.
+- Community Testing.
+
+Deliverables:
+- Contribution guidelines.
+- Plugin SDK documentation.
+- Release and maintenance policy.
+
+---
+
+# 5. Yêu cầu lập kế hoạch chi tiết cho từng Phase
+
+Đối với MỖI phase, bắt buộc tạo một bảng có các cột:
+
+| Hạng mục | Nội dung |
+|---|---|
+| Phase ID | Mã giai đoạn |
+| Objective | Mục tiêu |
+| Scope | Phạm vi |
+| Prerequisites | Điều kiện tiên quyết |
+| Modules | Các module liên quan |
+| Architecture | Kiến trúc cần triển khai |
+| Tasks | Các nhiệm vụ cụ thể |
+| Dependencies | Phụ thuộc |
+| Deliverables | Sản phẩm bàn giao |
+| Tests | Kiểm thử |
+| Risks | Rủi ro |
+| Acceptance Criteria | Tiêu chí nghiệm thu |
+| Estimated Complexity | Độ phức tạp |
+| Status | Trạng thái |
+
+Mỗi phase phải được chia thành milestone và task nhỏ.
+
+Không được đưa ra estimate thời gian chính xác nếu chưa có đủ thông tin về nhân lực và môi trường. Có thể dùng mức độ S/M/L/XL và giải thích.
+
+---
+
+# 6. Quản lý quan hệ phụ thuộc
+
+Tạo Dependency Graph cho toàn bộ dự án.
+
+Phải chỉ rõ:
+
+- Module nào cần hoàn thành trước.
+- Module nào có thể phát triển song song.
+- Module nào cần interface trước khi implementation.
+- Module nào có thể thay thế.
+- Module nào có rủi ro phụ thuộc công nghệ bên ngoài.
+
+Không tạo dependency vòng.
+
+Ưu tiên các dependency direction:
+
+Presentation → Application → Domain
+
+Infrastructure → Application/Domain abstractions
+
+Domain không được phụ thuộc vào GUI, database cụ thể, AI provider hoặc Minecraft loader implementation.
+
+Migration adapters phải phụ thuộc vào các contract chung, không phụ thuộc lẫn nhau nếu không có lý do rõ ràng.
+
+Hãy xác định các điểm cần dùng:
+- Dependency Injection.
+- Event Bus.
+- Message Queue nếu thực sự cần.
+- Plugin Registry.
+- Service Interface.
+- Repository Pattern.
+- Adapter Pattern.
+- Strategy Pattern.
+- Factory Pattern.
+- Command Pattern.
+
+Giải thích lý do dùng từng pattern, tránh áp dụng pattern chỉ để làm kiến trúc phức tạp hơn.
+
+---
+
+# 7. Cấu trúc repository
+
+Đề xuất cấu trúc thư mục có khả năng mở rộng.
+
+Có thể bắt đầu với cấu trúc tham khảo:
+
+```text
+universal-minecraft-mod-porter/
+│
+├── apps/
+│   ├── desktop/
+│   ├── cli/
+│   └── api/
+│
+├── core/
+│   ├── domain/
+│   ├── application/
+│   ├── orchestration/
+│   ├── events/
+│   ├── sessions/
+│   └── filesystem/
+│
+├── engines/
+│   ├── analyzer/
+│   ├── migration/
+│   ├── compatibility/
+│   ├── build/
+│   ├── testing/
+│   └── decompiler/
+│
+├── adapters/
+│   ├── minecraft/
+│   ├── loaders/
+│   ├── languages/
+│   ├── mappings/
+│   ├── rendering/
+│   ├── networking/
+│   ├── native/
+│   └── build-systems/
+│
+├── ai/
+│   ├── providers/
+│   ├── agents/
+│   ├── orchestration/
+│   ├── context/
+│   └── evaluation/
+│
+├── plugins/
+│   ├── sdk/
+│   ├── registry/
+│   └── examples/
+│
+├── knowledge/
+│   ├── mappings/
+│   ├── recipes/
+│   ├── compatibility/
+│   └── schemas/
+│
+├── infrastructure/
+│   ├── database/
+│   ├── sandbox/
+│   ├── cache/
+│   └── ci/
+│
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   ├── regression/
+│   ├── compatibility/
+│   └── fixtures/
+│
+├── docs/
+│   ├── architecture/
+│   ├── decisions/
+│   ├── development/
+│   ├── api/
+│   └── user-guide/
+│
+├── scripts/
+├── .github/
+├── README.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+└── LICENSE
+```
+
+Đây chỉ là cấu trúc khởi điểm. Hãy đánh giá và điều chỉnh dựa trên tech stack cuối cùng.
+
+Không được tạo tất cả module dưới dạng thư mục rỗng. Chỉ tạo module khi có nhiệm vụ, contract và kế hoạch triển khai cụ thể.
+
+---
+
+# 8. Tài liệu bắt buộc
+
+Tạo danh sách tài liệu cần duy trì:
+
+1. `PRD.md`: Product Requirements Document.
+2. `SAD.md`: Software Architecture Document.
+3. `ROADMAP.md`: Development Roadmap.
+4. `MODULES.md`: Module Catalog.
+5. `DEPENDENCY_GRAPH.md`: Module Dependencies.
+6. `TECH_STACK.md`: Technology Decisions.
+7. `PLUGIN_SDK.md`: Plugin Architecture.
+8. `AI_ARCHITECTURE.md`: AI Agent Architecture.
+9. `MIGRATION_PIPELINE.md`: Migration Workflow.
+10. `DATABASE_SCHEMA.md`: Data Model.
+11. `SECURITY.md`: Security Design.
+12. `TESTING_STRATEGY.md`: Testing Strategy.
+13. `CONTRIBUTING.md`: Contribution Guidelines.
+14. `CHANGELOG.md`: Release History.
+15. `KNOWN_LIMITATIONS.md`: Known Limitations.
+
+Bổ sung Architecture Decision Records trong `docs/decisions/`.
+
+Mỗi quyết định kiến trúc quan trọng phải có:
+- Context.
+- Problem.
+- Options.
+- Decision.
+- Consequences.
+- Alternatives rejected.
+
+---
+
+# 9. Quy trình phát triển theo milestone
+
+Mỗi milestone phải tuân theo quy trình:
+
+1. Kiểm tra trạng thái repository.
+2. Đọc tài liệu kiến trúc hiện tại.
+3. Kiểm tra dependencies.
+4. Xác định phạm vi thay đổi.
+5. Tạo Git branch.
+6. Tạo backup/checkpoint khi thay đổi lớn.
+7. Viết hoặc cập nhật tests.
+8. Triển khai code.
+9. Chạy tests.
+10. Chạy build.
+11. Review diff.
+12. Cập nhật tài liệu.
+13. Cập nhật roadmap.
+14. Tạo Git commit.
+15. Chỉ chuyển milestone tiếp theo khi đạt acceptance criteria.
+
+Nếu test thất bại:
+- Phân tích nguyên nhân.
+- Không che giấu lỗi.
+- Không tự ý bỏ qua test.
+- Không đánh dấu milestone hoàn thành.
+- Có thể tiếp tục những task độc lập nếu không ảnh hưởng tính đúng đắn.
+
+---
+
+# 10. Quản lý tiến độ và trạng thái
+
+Sử dụng trạng thái thống nhất:
+
+- NOT_STARTED.
+- PLANNED.
+- IN_PROGRESS.
+- BLOCKED.
+- NEEDS_REVIEW.
+- TESTING.
+- COMPLETED.
+- DEPRECATED.
+
+Mỗi task phải có:
+
+- ID.
+- Description.
+- Owner/Agent.
+- Dependencies.
+- Priority.
+- Status.
+- Acceptance Criteria.
+- Test Evidence.
+- Related Files.
+- Known Issues.
+
+Tạo `PROJECT_STATUS.md` để cập nhật tiến độ.
+
+Không được đánh dấu COMPLETED khi chỉ mới viết code mà chưa chạy kiểm thử.
+
+---
+
+# 11. Quản lý rủi ro
+
+Tạo Risk Register, tối thiểu bao gồm:
+
+- Minecraft API thay đổi lớn giữa phiên bản.
+- Thiếu source code.
+- JAR bị obfuscate.
+- Mapping không đầy đủ.
+- Mixin phức tạp.
+- Rendering pipeline thay đổi.
+- Native dependency không tương thích.
+- Thiếu tài liệu cho mod loader cũ.
+- Mod có custom classloader.
+- Dependency không còn tồn tại.
+- AI sửa sai logic.
+- AI tạo regression.
+- Chi phí API cao.
+- Sandbox không đủ an toàn.
+- Mod không thể kiểm thử tự động.
+- Khác biệt giữa client và server.
+- License không cho phép redistribution.
+
+Mỗi rủi ro cần:
+- Probability.
+- Impact.
+- Severity.
+- Mitigation.
+- Fallback.
+- Owner.
+
+---
+
+# 12. Nguyên tắc tránh overengineering
+
+Đây là yêu cầu quan trọng.
+
+Không được:
+
+- Triển khai microservices khi chưa cần.
+- Dùng quá nhiều database.
+- Tạo quá nhiều abstraction không có use case.
+- Xây dựng plugin marketplace trước khi Plugin SDK ổn định.
+- Tạo hệ thống AI nhiều Agent quá phức tạp ngay từ MVP.
+- Tích hợp mọi ngôn ngữ cùng lúc.
+- Hỗ trợ mọi phiên bản ngay trong bản đầu tiên.
+- Tạo framework riêng nếu đã có thư viện phù hợp.
+- Viết lại những công cụ open-source đang hoạt động tốt mà có thể tích hợp hợp pháp.
+
+Mỗi kiến trúc phải trả lời được:
+1. Nó giải quyết vấn đề gì?
+2. Vì sao cần nó?
+3. Có thể triển khai ở giai đoạn nào?
+4. Chi phí bảo trì là gì?
+5. Có giải pháp đơn giản hơn không?
+
+Ưu tiên kiến trúc tối thiểu có thể mở rộng, không phải kiến trúc phức tạp nhất.
+
+---
+
+# 13. Nhiệm vụ đầu tiên
+
+Trước tiên, hãy đọc toàn bộ Master Prompt UMMP và thực hiện một Architecture & Project Planning Review.
+
+Chưa viết code.
+
+Hãy xuất kết quả theo đúng thứ tự:
+
+### A. Executive Summary
+Tóm tắt sản phẩm và chiến lược triển khai.
+
+### B. Architecture Gap Analysis
+Những kiến trúc đã có, còn thiếu và cần bổ sung.
+
+### C. Recommended Architecture
+Kiến trúc tổng thể đề xuất và lý do lựa chọn.
+
+### D. Architecture Diagrams
+Tạo:
+- System Context Diagram.
+- Container Diagram.
+- Component Diagram.
+- Migration Pipeline Diagram.
+- AI Agent Interaction Diagram.
+- Module Dependency Diagram.
+
+Sử dụng Mermaid hoặc định dạng sơ đồ văn bản có thể quản lý bằng Git.
+
+### E. Phase Roadmap
+Chia thành các phase, milestone và task.
+
+### F. Dependency Analysis
+Chỉ rõ thứ tự triển khai và các công việc có thể chạy song song.
+
+### G. Repository Structure
+Đề xuất cấu trúc thư mục thực tế.
+
+### H. Technology Selection
+Đề xuất tech stack cuối cùng, nêu rõ lựa chọn và lý do.
+
+### I. Risk Register
+Đánh giá rủi ro kỹ thuật và kế hoạch giảm thiểu.
+
+### J. Testing Strategy
+Định nghĩa chiến lược kiểm thử cho toàn bộ dự án.
+
+### K. Documentation Plan
+Danh sách tài liệu và thời điểm cần tạo.
+
+### L. MVP Definition
+Xác định phạm vi MVP đủ nhỏ nhưng có giá trị thực tế.
+
+### M. Acceptance Criteria
+Đưa ra điều kiện nghiệm thu cho từng phase.
+
+### N. Next Actions
+Liệt kê chính xác những việc cần làm tiếp theo.
+
+---
+
+# 14. Quy tắc kết thúc mỗi giai đoạn
+
+Khi hoàn thành một phase, phải tạo báo cáo gồm:
+
+- Phase đã hoàn thành.
+- Những module đã triển khai.
+- Những module chưa hoàn thành.
+- Các file đã thay đổi.
+- Build status.
+- Test status.
+- Known issues.
+- Technical debt.
+- Architecture changes.
+- Các quyết định mới.
+- Những rủi ro còn tồn tại.
+- Điều kiện để bắt đầu phase tiếp theo.
+
+Nếu một phase chưa đạt acceptance criteria, phải giữ trạng thái IN_PROGRESS hoặc BLOCKED.
+
+Không được tự động chuyển sang phase tiếp theo.
+
+Chờ người dùng review và phê duyệt đối với các thay đổi kiến trúc lớn.
+
+---
+
+## KẾT QUẢ CUỐI CÙNG MONG MUỐN
+
+Xây dựng một kế hoạch kỹ thuật có thể dùng trực tiếp để phát triển Universal Minecraft Mod Porter trong thời gian dài.
+
+Dự án phải có:
+- Kiến trúc rõ ràng.
+- Module độc lập.
+- Plugin system.
+- Adapter system.
+- Migration pipeline.
+- AI Agent architecture.
+- Knowledge Base.
+- Build & Test infrastructure.
+- Security architecture.
+- Observability.
+- Versioning.
+- Documentation.
+- Roadmap.
+- Acceptance criteria.
+
+**Hãy ưu tiên tính khả thi, tính đúng đắn, khả năng mở rộng và khả năng bảo trì. Không hy sinh chất lượng kiến trúc chỉ để tạo ra nhiều code nhanh chóng.**

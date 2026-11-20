@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "demowidget",
+  "version": "1.0.0",
+  "name": "Demo Widget",
+  "description": "A synthetic test mod.",
+  "authors": ["Demo Author"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.example.demo.UmmpFabricEntry"]
+  },
+  "mixins": ["demowidget.mixins.json"],
+  "accessWidener": "demowidget.accesswidener",
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  }
+}

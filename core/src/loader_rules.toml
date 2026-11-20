@@ -1,0 +1,59 @@
+# Built-in loader-conversion data (Phase 9, ADR 0012). Read by `adapter/loader.rs`.
+# Real loader package names are allowed here: they are what the converter must recognize.
+# More renames can also come from the knowledge base (mappings with loader "<from>-><to>").
+
+# Package prefix of each loader's own API; uses left after conversion are reported.
+[prefixes]
+fabric = ["net.fabricmc."]
+forge = ["net.minecraftforge."]
+neoforge = ["net.neoforged."]
+
+[[rename]]
+pair = "forge->neoforge"
+from = "net.minecraftforge.fml.common.Mod"
+to = "net.neoforged.fml.common.Mod"
+
+[[rename]]
+pair = "forge->neoforge"
+from = "net.minecraftforge.eventbus.api.IEventBus"
+to = "net.neoforged.bus.api.IEventBus"
+
+[[rename]]
+pair = "forge->neoforge"
+from = "net.minecraftforge.eventbus.api.SubscribeEvent"
+to = "net.neoforged.bus.api.SubscribeEvent"
+
+[[rename]]
+pair = "forge->neoforge"
+from = "net.minecraftforge.common.MinecraftForge"
+to = "net.neoforged.neoforge.common.NeoForge"
+
+[[rename]]
+pair = "forge->neoforge"
+from = "MinecraftForge"
+to = "NeoForge"
+
+[[rename]]
+pair = "neoforge->forge"
+from = "net.neoforged.fml.common.Mod"
+to = "net.minecraftforge.fml.common.Mod"
+
+[[rename]]
+pair = "neoforge->forge"
+from = "net.neoforged.bus.api.IEventBus"
+to = "net.minecraftforge.eventbus.api.IEventBus"
+
+[[rename]]
+pair = "neoforge->forge"
+from = "net.neoforged.bus.api.SubscribeEvent"
+to = "net.minecraftforge.eventbus.api.SubscribeEvent"
+
+[[rename]]
+pair = "neoforge->forge"
+from = "net.neoforged.neoforge.common.NeoForge"
+to = "net.minecraftforge.common.MinecraftForge"
+
+[[rename]]
+pair = "neoforge->forge"
+from = "NeoForge"
+to = "MinecraftForge"

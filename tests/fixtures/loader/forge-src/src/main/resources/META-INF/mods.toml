@@ -1,0 +1,16 @@
+modLoader = "javafml"
+loaderVersion = "[52,)"
+license = "MIT"
+
+[[mods]]
+modId = "demowidget"
+version = "1.0.0"
+displayName = "Demo Widget"
+description = "A synthetic test mod."
+
+[[dependencies.demowidget]]
+modId = "forge"
+mandatory = true
+versionRange = "[52,)"
+ordering = "NONE"
+side = "BOTH"

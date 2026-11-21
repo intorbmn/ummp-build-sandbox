@@ -1,0 +1,11 @@
+{
+  "level": "high",
+  "findings": [
+    {
+      "rule": "demo.rule",
+      "severity": "high",
+      "file": "demo/DemoWidget.class",
+      "evidence": "DemoWidget"
+    }
+  ]
+}

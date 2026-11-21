@@ -1,0 +1,2405 @@
+{
+  "output": "/tmp/pack-out",
+  "items": [
+    {
+      "path": "mods/mod-0.jar",
+      "mod_id": "mod-0",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-1.jar",
+      "mod_id": "mod-1",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-2.jar",
+      "mod_id": "mod-2",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-3.jar",
+      "mod_id": "mod-3",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-4.jar",
+      "mod_id": "mod-4",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-5.jar",
+      "mod_id": "mod-5",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-6.jar",
+      "mod_id": "mod-6",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-7.jar",
+      "mod_id": "mod-7",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-8.jar",
+      "mod_id": "mod-8",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-9.jar",
+      "mod_id": "mod-9",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-10.jar",
+      "mod_id": "mod-10",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-11.jar",
+      "mod_id": "mod-11",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-12.jar",
+      "mod_id": "mod-12",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-13.jar",
+      "mod_id": "mod-13",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-14.jar",
+      "mod_id": "mod-14",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-15.jar",
+      "mod_id": "mod-15",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-16.jar",
+      "mod_id": "mod-16",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-17.jar",
+      "mod_id": "mod-17",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-18.jar",
+      "mod_id": "mod-18",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-19.jar",
+      "mod_id": "mod-19",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-20.jar",
+      "mod_id": "mod-20",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-21.jar",
+      "mod_id": "mod-21",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-22.jar",
+      "mod_id": "mod-22",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-23.jar",
+      "mod_id": "mod-23",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-24.jar",
+      "mod_id": "mod-24",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-25.jar",
+      "mod_id": "mod-25",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-26.jar",
+      "mod_id": "mod-26",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-27.jar",
+      "mod_id": "mod-27",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-28.jar",
+      "mod_id": "mod-28",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-29.jar",
+      "mod_id": "mod-29",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-30.jar",
+      "mod_id": "mod-30",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-31.jar",
+      "mod_id": "mod-31",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-32.jar",
+      "mod_id": "mod-32",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-33.jar",
+      "mod_id": "mod-33",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-34.jar",
+      "mod_id": "mod-34",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-35.jar",
+      "mod_id": "mod-35",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-36.jar",
+      "mod_id": "mod-36",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-37.jar",
+      "mod_id": "mod-37",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-38.jar",
+      "mod_id": "mod-38",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-39.jar",
+      "mod_id": "mod-39",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-40.jar",
+      "mod_id": "mod-40",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-41.jar",
+      "mod_id": "mod-41",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-42.jar",
+      "mod_id": "mod-42",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-43.jar",
+      "mod_id": "mod-43",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-44.jar",
+      "mod_id": "mod-44",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-45.jar",
+      "mod_id": "mod-45",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-46.jar",
+      "mod_id": "mod-46",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-47.jar",
+      "mod_id": "mod-47",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-48.jar",
+      "mod_id": "mod-48",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-49.jar",
+      "mod_id": "mod-49",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-50.jar",
+      "mod_id": "mod-50",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-51.jar",
+      "mod_id": "mod-51",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-52.jar",
+      "mod_id": "mod-52",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-53.jar",
+      "mod_id": "mod-53",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-54.jar",
+      "mod_id": "mod-54",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-55.jar",
+      "mod_id": "mod-55",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-56.jar",
+      "mod_id": "mod-56",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-57.jar",
+      "mod_id": "mod-57",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-58.jar",
+      "mod_id": "mod-58",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-59.jar",
+      "mod_id": "mod-59",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-60.jar",
+      "mod_id": "mod-60",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-61.jar",
+      "mod_id": "mod-61",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-62.jar",
+      "mod_id": "mod-62",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-63.jar",
+      "mod_id": "mod-63",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-64.jar",
+      "mod_id": "mod-64",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-65.jar",
+      "mod_id": "mod-65",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-66.jar",
+      "mod_id": "mod-66",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-67.jar",
+      "mod_id": "mod-67",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-68.jar",
+      "mod_id": "mod-68",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-69.jar",
+      "mod_id": "mod-69",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-70.jar",
+      "mod_id": "mod-70",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-71.jar",
+      "mod_id": "mod-71",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-72.jar",
+      "mod_id": "mod-72",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-73.jar",
+      "mod_id": "mod-73",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-74.jar",
+      "mod_id": "mod-74",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-75.jar",
+      "mod_id": "mod-75",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-76.jar",
+      "mod_id": "mod-76",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-77.jar",
+      "mod_id": "mod-77",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-78.jar",
+      "mod_id": "mod-78",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-79.jar",
+      "mod_id": "mod-79",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-80.jar",
+      "mod_id": "mod-80",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-81.jar",
+      "mod_id": "mod-81",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-82.jar",
+      "mod_id": "mod-82",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-83.jar",
+      "mod_id": "mod-83",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-84.jar",
+      "mod_id": "mod-84",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-85.jar",
+      "mod_id": "mod-85",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-86.jar",
+      "mod_id": "mod-86",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-87.jar",
+      "mod_id": "mod-87",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-88.jar",
+      "mod_id": "mod-88",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-89.jar",
+      "mod_id": "mod-89",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-90.jar",
+      "mod_id": "mod-90",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-91.jar",
+      "mod_id": "mod-91",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-92.jar",
+      "mod_id": "mod-92",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-93.jar",
+      "mod_id": "mod-93",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-94.jar",
+      "mod_id": "mod-94",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-95.jar",
+      "mod_id": "mod-95",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-96.jar",
+      "mod_id": "mod-96",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-97.jar",
+      "mod_id": "mod-97",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-98.jar",
+      "mod_id": "mod-98",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-99.jar",
+      "mod_id": "mod-99",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-100.jar",
+      "mod_id": "mod-100",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-101.jar",
+      "mod_id": "mod-101",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-102.jar",
+      "mod_id": "mod-102",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-103.jar",
+      "mod_id": "mod-103",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-104.jar",
+      "mod_id": "mod-104",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-105.jar",
+      "mod_id": "mod-105",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-106.jar",
+      "mod_id": "mod-106",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-107.jar",
+      "mod_id": "mod-107",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-108.jar",
+      "mod_id": "mod-108",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-109.jar",
+      "mod_id": "mod-109",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-110.jar",
+      "mod_id": "mod-110",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-111.jar",
+      "mod_id": "mod-111",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-112.jar",
+      "mod_id": "mod-112",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-113.jar",
+      "mod_id": "mod-113",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-114.jar",
+      "mod_id": "mod-114",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-115.jar",
+      "mod_id": "mod-115",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-116.jar",
+      "mod_id": "mod-116",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-117.jar",
+      "mod_id": "mod-117",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-118.jar",
+      "mod_id": "mod-118",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-119.jar",
+      "mod_id": "mod-119",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-120.jar",
+      "mod_id": "mod-120",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-121.jar",
+      "mod_id": "mod-121",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-122.jar",
+      "mod_id": "mod-122",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-123.jar",
+      "mod_id": "mod-123",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-124.jar",
+      "mod_id": "mod-124",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-125.jar",
+      "mod_id": "mod-125",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-126.jar",
+      "mod_id": "mod-126",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-127.jar",
+      "mod_id": "mod-127",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-128.jar",
+      "mod_id": "mod-128",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-129.jar",
+      "mod_id": "mod-129",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-130.jar",
+      "mod_id": "mod-130",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-131.jar",
+      "mod_id": "mod-131",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-132.jar",
+      "mod_id": "mod-132",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-133.jar",
+      "mod_id": "mod-133",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-134.jar",
+      "mod_id": "mod-134",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-135.jar",
+      "mod_id": "mod-135",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-136.jar",
+      "mod_id": "mod-136",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-137.jar",
+      "mod_id": "mod-137",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-138.jar",
+      "mod_id": "mod-138",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-139.jar",
+      "mod_id": "mod-139",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-140.jar",
+      "mod_id": "mod-140",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-141.jar",
+      "mod_id": "mod-141",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-142.jar",
+      "mod_id": "mod-142",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-143.jar",
+      "mod_id": "mod-143",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-144.jar",
+      "mod_id": "mod-144",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-145.jar",
+      "mod_id": "mod-145",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-146.jar",
+      "mod_id": "mod-146",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-147.jar",
+      "mod_id": "mod-147",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-148.jar",
+      "mod_id": "mod-148",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-149.jar",
+      "mod_id": "mod-149",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-150.jar",
+      "mod_id": "mod-150",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-151.jar",
+      "mod_id": "mod-151",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-152.jar",
+      "mod_id": "mod-152",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-153.jar",
+      "mod_id": "mod-153",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-154.jar",
+      "mod_id": "mod-154",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-155.jar",
+      "mod_id": "mod-155",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-156.jar",
+      "mod_id": "mod-156",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-157.jar",
+      "mod_id": "mod-157",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-158.jar",
+      "mod_id": "mod-158",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-159.jar",
+      "mod_id": "mod-159",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-160.jar",
+      "mod_id": "mod-160",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-161.jar",
+      "mod_id": "mod-161",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-162.jar",
+      "mod_id": "mod-162",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-163.jar",
+      "mod_id": "mod-163",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-164.jar",
+      "mod_id": "mod-164",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-165.jar",
+      "mod_id": "mod-165",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-166.jar",
+      "mod_id": "mod-166",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-167.jar",
+      "mod_id": "mod-167",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-168.jar",
+      "mod_id": "mod-168",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-169.jar",
+      "mod_id": "mod-169",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-170.jar",
+      "mod_id": "mod-170",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-171.jar",
+      "mod_id": "mod-171",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-172.jar",
+      "mod_id": "mod-172",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-173.jar",
+      "mod_id": "mod-173",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-174.jar",
+      "mod_id": "mod-174",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-175.jar",
+      "mod_id": "mod-175",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-176.jar",
+      "mod_id": "mod-176",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-177.jar",
+      "mod_id": "mod-177",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-178.jar",
+      "mod_id": "mod-178",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-179.jar",
+      "mod_id": "mod-179",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-180.jar",
+      "mod_id": "mod-180",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-181.jar",
+      "mod_id": "mod-181",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-182.jar",
+      "mod_id": "mod-182",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-183.jar",
+      "mod_id": "mod-183",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-184.jar",
+      "mod_id": "mod-184",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-185.jar",
+      "mod_id": "mod-185",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-186.jar",
+      "mod_id": "mod-186",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-187.jar",
+      "mod_id": "mod-187",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-188.jar",
+      "mod_id": "mod-188",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-189.jar",
+      "mod_id": "mod-189",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-190.jar",
+      "mod_id": "mod-190",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-191.jar",
+      "mod_id": "mod-191",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-192.jar",
+      "mod_id": "mod-192",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-193.jar",
+      "mod_id": "mod-193",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-194.jar",
+      "mod_id": "mod-194",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-195.jar",
+      "mod_id": "mod-195",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-196.jar",
+      "mod_id": "mod-196",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-197.jar",
+      "mod_id": "mod-197",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-198.jar",
+      "mod_id": "mod-198",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-199.jar",
+      "mod_id": "mod-199",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-200.jar",
+      "mod_id": "mod-200",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-201.jar",
+      "mod_id": "mod-201",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-202.jar",
+      "mod_id": "mod-202",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-203.jar",
+      "mod_id": "mod-203",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-204.jar",
+      "mod_id": "mod-204",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-205.jar",
+      "mod_id": "mod-205",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-206.jar",
+      "mod_id": "mod-206",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-207.jar",
+      "mod_id": "mod-207",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-208.jar",
+      "mod_id": "mod-208",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-209.jar",
+      "mod_id": "mod-209",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-210.jar",
+      "mod_id": "mod-210",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-211.jar",
+      "mod_id": "mod-211",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-212.jar",
+      "mod_id": "mod-212",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-213.jar",
+      "mod_id": "mod-213",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-214.jar",
+      "mod_id": "mod-214",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-215.jar",
+      "mod_id": "mod-215",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-216.jar",
+      "mod_id": "mod-216",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-217.jar",
+      "mod_id": "mod-217",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-218.jar",
+      "mod_id": "mod-218",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-219.jar",
+      "mod_id": "mod-219",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-220.jar",
+      "mod_id": "mod-220",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-221.jar",
+      "mod_id": "mod-221",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-222.jar",
+      "mod_id": "mod-222",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-223.jar",
+      "mod_id": "mod-223",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-224.jar",
+      "mod_id": "mod-224",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-225.jar",
+      "mod_id": "mod-225",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-226.jar",
+      "mod_id": "mod-226",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-227.jar",
+      "mod_id": "mod-227",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-228.jar",
+      "mod_id": "mod-228",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-229.jar",
+      "mod_id": "mod-229",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-230.jar",
+      "mod_id": "mod-230",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-231.jar",
+      "mod_id": "mod-231",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-232.jar",
+      "mod_id": "mod-232",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-233.jar",
+      "mod_id": "mod-233",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-234.jar",
+      "mod_id": "mod-234",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-235.jar",
+      "mod_id": "mod-235",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-236.jar",
+      "mod_id": "mod-236",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-237.jar",
+      "mod_id": "mod-237",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-238.jar",
+      "mod_id": "mod-238",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-239.jar",
+      "mod_id": "mod-239",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-240.jar",
+      "mod_id": "mod-240",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-241.jar",
+      "mod_id": "mod-241",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-242.jar",
+      "mod_id": "mod-242",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-243.jar",
+      "mod_id": "mod-243",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-244.jar",
+      "mod_id": "mod-244",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-245.jar",
+      "mod_id": "mod-245",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-246.jar",
+      "mod_id": "mod-246",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-247.jar",
+      "mod_id": "mod-247",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-248.jar",
+      "mod_id": "mod-248",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-249.jar",
+      "mod_id": "mod-249",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-250.jar",
+      "mod_id": "mod-250",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-251.jar",
+      "mod_id": "mod-251",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-252.jar",
+      "mod_id": "mod-252",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-253.jar",
+      "mod_id": "mod-253",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-254.jar",
+      "mod_id": "mod-254",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-255.jar",
+      "mod_id": "mod-255",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-256.jar",
+      "mod_id": "mod-256",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-257.jar",
+      "mod_id": "mod-257",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-258.jar",
+      "mod_id": "mod-258",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-259.jar",
+      "mod_id": "mod-259",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-260.jar",
+      "mod_id": "mod-260",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-261.jar",
+      "mod_id": "mod-261",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-262.jar",
+      "mod_id": "mod-262",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-263.jar",
+      "mod_id": "mod-263",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-264.jar",
+      "mod_id": "mod-264",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-265.jar",
+      "mod_id": "mod-265",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-266.jar",
+      "mod_id": "mod-266",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-267.jar",
+      "mod_id": "mod-267",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-268.jar",
+      "mod_id": "mod-268",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-269.jar",
+      "mod_id": "mod-269",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-270.jar",
+      "mod_id": "mod-270",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-271.jar",
+      "mod_id": "mod-271",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-272.jar",
+      "mod_id": "mod-272",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-273.jar",
+      "mod_id": "mod-273",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-274.jar",
+      "mod_id": "mod-274",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-275.jar",
+      "mod_id": "mod-275",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-276.jar",
+      "mod_id": "mod-276",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-277.jar",
+      "mod_id": "mod-277",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-278.jar",
+      "mod_id": "mod-278",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-279.jar",
+      "mod_id": "mod-279",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-280.jar",
+      "mod_id": "mod-280",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-281.jar",
+      "mod_id": "mod-281",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-282.jar",
+      "mod_id": "mod-282",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-283.jar",
+      "mod_id": "mod-283",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-284.jar",
+      "mod_id": "mod-284",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-285.jar",
+      "mod_id": "mod-285",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-286.jar",
+      "mod_id": "mod-286",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-287.jar",
+      "mod_id": "mod-287",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-288.jar",
+      "mod_id": "mod-288",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-289.jar",
+      "mod_id": "mod-289",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-290.jar",
+      "mod_id": "mod-290",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-291.jar",
+      "mod_id": "mod-291",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-292.jar",
+      "mod_id": "mod-292",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-293.jar",
+      "mod_id": "mod-293",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-294.jar",
+      "mod_id": "mod-294",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-295.jar",
+      "mod_id": "mod-295",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-296.jar",
+      "mod_id": "mod-296",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-297.jar",
+      "mod_id": "mod-297",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-298.jar",
+      "mod_id": "mod-298",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    },
+    {
+      "path": "mods/mod-299.jar",
+      "mod_id": "mod-299",
+      "action": {
+        "action": "keep"
+      },
+      "reason": "already compatible"
+    }
+  ]
+}

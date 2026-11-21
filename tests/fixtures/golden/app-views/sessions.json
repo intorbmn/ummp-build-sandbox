@@ -1,0 +1,16 @@
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "state": "Succeeded",
+    "step": "done",
+    "output": "/tmp/out",
+    "error": null
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000002",
+    "state": "Failed",
+    "step": "port",
+    "output": null,
+    "error": "boom"
+  }
+]

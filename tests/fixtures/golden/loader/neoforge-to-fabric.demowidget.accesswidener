@@ -1,0 +1,5 @@
+accessWidener v2 named
+# Converted from META-INF/accesstransformer.cfg by UMMP.
+accessible class net/minecraft/server/DemoInternal
+accessible method net/minecraft/server/DemoInternal tickDemo ()V
+# UMMP: add the field type descriptor: mutable field net/minecraft/server/DemoInternal demoName <descriptor>

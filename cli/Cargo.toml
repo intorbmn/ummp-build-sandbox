@@ -1,0 +1,25 @@
+[package]
+name = "ummp"
+version = "0.1.0"
+edition = "2021"
+description = "Universal Minecraft Mod Porter — CLI"
+license = "MIT"
+
+[dependencies]
+ummp-core = { path = "../core" }
+ummp-ai-providers = { path = "../providers" }
+ummp-server = { path = "../server" }
+clap = { version = "4", features = ["derive"] }
+clap_complete = "4"
+serde = { version = "1", features = ["derive"] }
+tracing-subscriber = "0.3"
+serde_json = "1"
+tempfile = "3"
+uuid = { version = "1", features = ["serde"] }
+
+[dev-dependencies]
+zip = "0.6"
+serde_json = "1"
+
+[lints]
+workspace = true

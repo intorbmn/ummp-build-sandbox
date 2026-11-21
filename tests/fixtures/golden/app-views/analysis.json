@@ -1,0 +1,16 @@
+{
+  "kind": "zip",
+  "mods": [
+    {
+      "id": "demomod",
+      "name": "Demo Mod",
+      "version": "1.0.0",
+      "loader": "forge",
+      "minecraft": "1.16.5",
+      "java": 8
+    }
+  ],
+  "build_system": "gradle",
+  "languages": ["java"],
+  "technologies": []
+}

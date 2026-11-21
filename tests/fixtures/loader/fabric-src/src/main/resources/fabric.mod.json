@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "demowidget",
+  "version": "${version}",
+  "name": "Demo Widget",
+  "description": "A synthetic test mod.",
+  "authors": ["Demo Author"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.example.demo.DemoWidgetMod"]
+  },
+  "mixins": ["demowidget.mixins.json"],
+  "accessWidener": "demowidget.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "demolib": ">=2.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+---- Minecraft Crash Report ----
+// This is a synthetic test fixture.
+
+Time: 2026-11-19 10:00:00
+Description: Exception in server tick loop
+
+java.lang.NullPointerException: Cannot invoke "com.example.demo.DemoGadget.tick()" because "this.gadget" is null
+	at com.example.demo.DemoWidget.tick(DemoWidget.java:42)
+	at com.example.demo.DemoServer.run(DemoServer.java:10)
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Suspected Mods: 
+	Demo Widget (demowidget), Version: 1.0.0
+		at TRANSFORMER/demowidget@1.0.0/com.example.demo.DemoWidget.tick(DemoWidget.java:42)
+
+Stacktrace:
+	at com.example.demo.DemoWidget.tick(DemoWidget.java:42)

@@ -1,0 +1,6 @@
+accessWidener v2 named
+accessible class net/minecraft/server/DemoInternal
+accessible method net/minecraft/server/DemoInternal tickDemo ()V
+accessible field net/minecraft/server/DemoInternal demoSize I
+mutable field net/minecraft/server/DemoInternal demoName Ljava/lang/String;
+extendable class net/minecraft/server/DemoBase

@@ -1,0 +1,16 @@
+plugins {
+    id 'fabric-loom' version '1.7-SNAPSHOT'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/demowidget.accesswidener")
+}

@@ -1,0 +1,10 @@
+{
+  "path": "<data-dir>/credentials.json",
+  "providers": [
+    {
+      "provider": "anthropic",
+      "saved": true,
+      "masked": "sk-ant-…0000"
+    }
+  ]
+}

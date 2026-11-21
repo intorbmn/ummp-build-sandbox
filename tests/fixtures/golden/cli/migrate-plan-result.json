@@ -1,0 +1,39 @@
+{
+  "source_minecraft": "",
+  "target_minecraft": "",
+  "source_loader": "fabric",
+  "target_loader": "",
+  "files": [
+    {
+      "path": "",
+      "kind": "modified",
+      "diff": "",
+      "replacements": 0,
+      "needs_attention": false
+    }
+  ],
+  "moves": [
+    {
+      "from": "",
+      "to": ""
+    }
+  ],
+  "deletes": [""],
+  "technologies": [
+    {
+      "tech": "",
+      "handling": "auto",
+      "file": "",
+      "line": null,
+      "message": ""
+    }
+  ],
+  "skipped": [
+    {
+      "description": "",
+      "reason": ""
+    }
+  ],
+  "warnings": [""],
+  "files_scanned": 0
+}

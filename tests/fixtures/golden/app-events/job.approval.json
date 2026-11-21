@@ -1,0 +1,10 @@
+{
+  "job": "00000000-0000-0000-0000-000000000001",
+  "approval": "00000000-0000-0000-0000-000000000003",
+  "path": "src/main/java/demo/DemoWidget.java",
+  "diff": "--- a/DemoWidget.java\n+++ b/DemoWidget.java\n",
+  "reviewer_approved": true,
+  "concerns": [
+    "touches the registry"
+  ]
+}

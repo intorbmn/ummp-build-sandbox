@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Smoke-test the in-progress Phase 12D feature branch.
       - name: Run UMMP Action from the feature branch
         id: ummp
         uses: intorbmn/Universal-Minecraft-Mod-Porter@phase-12d-action

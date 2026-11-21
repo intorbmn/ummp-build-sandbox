@@ -3,7 +3,7 @@ name: UMMP Phase 12D Action smoke
 on:
   push:
     branches:
-      - ummp/phase-12d-action-smoke
+      - ummp/phase-12d-action-smoke-2
   pull_request:
     branches:
       - ummp/build-demo-20261119-143211
@@ -18,7 +18,7 @@ jobs:
         id: ummp
         uses: intorbmn/Universal-Minecraft-Mod-Porter@phase-12d-action
         with:
-          command: analyze
+          command: scan
           path: .
           fail-on-risk: high
 
@@ -31,4 +31,4 @@ jobs:
           set -euo pipefail
           test "$EXIT_CODE" = "0"
           test -s "$REPORT_PATH/result.json"
-          jq -e '.schema == 1 and .command == "analyze"' "$REPORT_PATH/result.json"
+          jq -e '.schema == 1 and .command == "scan" and (.result.findings | type == "array")' "$REPORT_PATH/result.json"

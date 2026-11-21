@@ -1,0 +1,34 @@
+name: UMMP Phase 12D Action smoke
+
+on:
+  push:
+    branches:
+      - ummp/phase-12d-action-smoke
+  pull_request:
+    branches:
+      - ummp/build-demo-20261119-143211
+
+jobs:
+  action-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run UMMP Action from the feature branch
+        id: ummp
+        uses: intorbmn/Universal-Minecraft-Mod-Porter@phase-12d-action
+        with:
+          command: analyze
+          path: .
+          fail-on-risk: high
+
+      - name: Verify Action outputs and report
+        shell: bash
+        env:
+          EXIT_CODE: ${{ steps.ummp.outputs.exit-code }}
+          REPORT_PATH: ${{ steps.ummp.outputs.report-path }}
+        run: |
+          set -euo pipefail
+          test "$EXIT_CODE" = "0"
+          test -s "$REPORT_PATH/result.json"
+          jq -e '.schema == 1 and .command == "analyze"' "$REPORT_PATH/result.json"

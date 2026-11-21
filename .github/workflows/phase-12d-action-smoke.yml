@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - ummp/phase-12d-action-smoke
+  pull_request:
+    branches:
+      - ummp/build-demo-20261119-143211
 
 jobs:
   action-smoke:

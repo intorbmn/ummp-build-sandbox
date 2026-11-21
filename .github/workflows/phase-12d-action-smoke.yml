@@ -19,7 +19,7 @@ jobs:
         id: ummp
         uses: intorbmn/Universal-Minecraft-Mod-Porter@phase-12d-action
         with:
-          command: analyze
+          command: scan
           path: .
           fail-on-risk: high
 
@@ -32,4 +32,4 @@ jobs:
           set -euo pipefail
           test "$EXIT_CODE" = "0"
           test -s "$REPORT_PATH/result.json"
-          jq -e '.schema == 1 and .command == "analyze"' "$REPORT_PATH/result.json"
+          jq -e '.schema == 1 and .command == "scan" and (.result.findings | type == "array")' "$REPORT_PATH/result.json"

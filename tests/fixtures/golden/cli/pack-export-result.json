@@ -1,0 +1,23 @@
+{
+  "output": "",
+  "report": {
+    "name": "",
+    "from": "",
+    "to": "",
+    "rows": [
+      {
+        "mod_id": "",
+        "path": "",
+        "version": "",
+        "action": "keep",
+        "reason": "",
+        "risk": "",
+        "technologies": [""]
+      }
+    ],
+    "conflicts": [""],
+    "warnings": [""]
+  },
+  "written": [""],
+  "exit_code": 0
+}

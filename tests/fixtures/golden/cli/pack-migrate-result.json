@@ -1,0 +1,16 @@
+{
+  "output": "",
+  "manual": 0,
+  "written": [""],
+  "items": [
+    {
+      "path": "",
+      "mod_id": "",
+      "action": {
+        "action": "keep"
+      },
+      "reason": ""
+    }
+  ],
+  "exit_code": 0
+}

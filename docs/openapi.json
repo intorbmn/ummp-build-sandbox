@@ -1,0 +1,222 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "UMMP Local REST API",
+    "version": "1.0.0",
+    "description": "Localhost-only API. All routes except health require a bearer token."
+  },
+  "paths": {
+    "/v1/health": {
+      "get": {
+        "summary": "Health check",
+        "responses": {
+          "200": {
+            "description": "Healthy"
+          }
+        }
+      }
+    },
+    "/v1/analyze": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Analyze a mod source",
+        "responses": {
+          "200": {
+            "description": "AnalysisView"
+          }
+        }
+      }
+    },
+    "/v1/scan": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Scan a mod for risk indicators",
+        "responses": {
+          "200": {
+            "description": "RiskView"
+          }
+        }
+      }
+    },
+    "/v1/plan": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Preview migration without writing",
+        "responses": {
+          "200": {
+            "description": "PlanView"
+          }
+        }
+      }
+    },
+    "/v1/port": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Start a port job",
+        "responses": {
+          "200": {
+            "description": "Job id"
+          }
+        }
+      }
+    },
+    "/v1/migrate": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Start reviewed in-place migration",
+        "responses": {
+          "200": {
+            "description": "Job id"
+          },
+          "403": {
+            "description": "Review required"
+          }
+        }
+      }
+    },
+    "/v1/pack": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Start pack migration",
+        "responses": {
+          "200": {
+            "description": "Job id"
+          }
+        }
+      }
+    },
+    "/v1/build": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Start build job",
+        "responses": {
+          "200": {
+            "description": "Job id"
+          }
+        }
+      }
+    },
+    "/v1/jobs/{id}": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Get job state",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "JobView"
+          }
+        }
+      }
+    },
+    "/v1/jobs/{id}/events": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Stream job events using server-sent events",
+        "responses": {
+          "200": {
+            "description": "SSE stream"
+          }
+        }
+      }
+    },
+    "/v1/jobs/{id}/cancel": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Request job cancellation",
+        "responses": {
+          "202": {
+            "description": "Cancellation requested"
+          }
+        }
+      }
+    },
+    "/v1/sessions/{project}/rollback": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Restore a project checkpoint",
+        "responses": {
+          "200": {
+            "description": "Restored"
+          }
+        }
+      }
+    },
+    "/v1/openapi.json": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "OpenAPI document",
+        "responses": {
+          "200": {
+            "description": "OpenAPI 3.0 JSON"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

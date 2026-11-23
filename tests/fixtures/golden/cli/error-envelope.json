@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "error": {
+    "kind": "invalid_input",
+    "message": "bad path"
+  }
+}

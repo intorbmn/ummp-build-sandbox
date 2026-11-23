@@ -1,0 +1,96 @@
+# Malware-risk rules for `ummp scan` (ADR 0011).
+# A rule matches a file when every group in `all` has at least one hit in that file's text.
+# An item "a&&b" hits only when both substrings occur. For class files the text is the
+# constant-pool Utf8 strings, one per line, with a newline before and after each.
+
+[[rule]]
+id = "exec-with-network"
+severity = "high"
+description = "Runs system commands and uses the network"
+files = ["class", "java", "kt"]
+all = [
+  ["java/lang/ProcessBuilder", "java/lang/Runtime&&\nexec\n", "ProcessBuilder(", "getRuntime().exec"],
+  ["java/net/", "java.net.", "new URL(", "new Socket(", "HttpClient"],
+]
+
+[[rule]]
+id = "dynamic-class-loading"
+severity = "high"
+description = "Loads classes from bytes or remote URLs at runtime"
+files = ["class", "java", "kt"]
+all = [["\ndefineClass\n", "defineClass(", "java/net/URLClassLoader", "URLClassLoader("]]
+
+[[rule]]
+id = "session-token-access"
+severity = "high"
+description = "Reads the game session/access token and uses the network"
+files = ["class", "java", "kt"]
+all = [
+  ["getAccessToken", "accessToken", "getSessionId"],
+  ["java/net/", "java.net.", "new URL(", "HttpClient"],
+]
+
+[[rule]]
+id = "credential-paths"
+severity = "high"
+description = "References browser, Discord or launcher credential stores"
+files = ["class", "java", "kt"]
+all = [["Local Storage/leveldb", "Local Storage\\leveldb", "Login Data", "Network/Cookies", "discord/Local Storage", "launcher_accounts", "Local State"]]
+
+[[rule]]
+id = "exfiltration-url"
+severity = "high"
+description = "Contains a webhook or paste-site URL often used to send stolen data"
+files = ["class", "java", "kt", "gradle", "kts", "properties"]
+all = [["discord.com/api/webhooks", "discordapp.com/api/webhooks", "pastebin.com/raw", "api.telegram.org/bot", "transfer.sh"]]
+
+[[rule]]
+id = "build-download-exec"
+severity = "high"
+description = "Build script downloads something and runs commands"
+files = ["gradle", "kts"]
+all = [
+  ["http://", "https://"],
+  ["type: Exec", "Exec)", "exec {", "exec(", "commandLine", "ProcessBuilder", ".execute()"],
+]
+
+[[rule]]
+id = "startup-persistence"
+severity = "high"
+description = "Writes to operating-system startup locations"
+files = ["class", "java", "kt", "gradle", "kts"]
+all = [["Programs/Startup", "Programs\\Startup", "CurrentVersion\\Run", "LaunchAgents", ".config/autostart", "crontab"]]
+
+[[rule]]
+id = "modifies-other-jars"
+severity = "medium"
+description = "Writes JAR files, possibly into the mods folder"
+files = ["class", "java", "kt"]
+all = [
+  ["java/util/jar/JarOutputStream", "java/util/zip/ZipOutputStream", "JarOutputStream(", "ZipOutputStream("],
+  ["mods/", "mods\\", "\nmods\n", "\"mods\""],
+]
+
+[[rule]]
+id = "obfuscated-reflection"
+severity = "medium"
+description = "Decodes strings and calls methods by reflection"
+files = ["class", "java", "kt"]
+all = [
+  ["\nforName\n", "Class.forName(", "getDeclaredMethod", "\ngetMethod\n", ".getMethod("],
+  ["java/util/Base64", "Base64.getDecoder", "\ndecode\n"],
+]
+
+[[rule]]
+id = "network-use"
+severity = "low"
+description = "Uses the network"
+files = ["class", "java", "kt"]
+all = [["java/net/", "java.net.", "HttpClient"]]
+
+[[rule]]
+id = "file-deletion"
+severity = "low"
+description = "Deletes files"
+files = ["class", "java", "kt"]
+all = [["\ndelete\n", "\ndeleteIfExists\n", ".delete()", "Files.delete"]]

@@ -1,0 +1,82 @@
+[package]
+name = "ummp-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+ummp-core = { path = "../core" }
+ummp-server = { path = "../server", features = ["fuzzing"] }
+tempfile = "3"
+zip = "9.0.5"
+serde_yaml = "0.9"
+
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "class_file"
+path = "fuzz_targets/class_file.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "descriptor"
+path = "fuzz_targets/descriptor.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "mrpack_index"
+path = "fuzz_targets/mrpack_index.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "zip_import"
+path = "fuzz_targets/zip_import.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "gradle_log"
+path = "fuzz_targets/gradle_log.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "crash_report"
+path = "fuzz_targets/crash_report.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "plugin_protocol"
+path = "fuzz_targets/plugin_protocol.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "rest_request"
+path = "fuzz_targets/rest_request.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "mcp_request"
+path = "fuzz_targets/mcp_request.rs"
+test = false
+doc = false
+bench = false

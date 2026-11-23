@@ -1,0 +1,16 @@
+> Task :compileJava FAILED
+/home/runner/work/demo/demo/src/main/java/com/example/demo/DemoWidget.java:12: error: ';' expected
+        int size = 4
+                    ^
+/home/runner/work/demo/demo/src/main/java/com/example/demo/DemoWidget.java:20: error: cannot find symbol
+        DemoGadget g = new DemoGadget();
+        ^
+  symbol:   class DemoGadget
+  location: class DemoWidget
+2 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.

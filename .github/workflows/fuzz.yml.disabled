@@ -1,0 +1,103 @@
+name: Scheduled fuzzing
+
+on:
+  push:
+    branches: [phase-13d-fuzzing, phase-13h-user-guides-v2]
+    paths:
+      - 'fuzz/**'
+      - '.github/workflows/fuzz.yml'
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase13-fuzz-${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/phase-13d-fuzzing'
+    name: build fuzz / ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - class_file
+          - descriptor
+          - mrpack_index
+          - zip_import
+          - gradle_log
+          - crash_report
+          - plugin_protocol
+          - rest_request
+          - mcp_request
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install nightly Rust
+        run: rustup toolchain install nightly --profile minimal
+
+      - name: Install cargo-fuzz
+        run: cargo install cargo-fuzz --locked
+
+      - name: Compile fuzz target
+        run: cargo +nightly fuzz build "${{ matrix.target }}"
+
+  fuzz:
+    if: github.event_name != 'push' || github.ref == 'refs/heads/phase-13h-user-guides-v2'
+    name: fuzz / ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - class_file
+          - descriptor
+          - mrpack_index
+          - zip_import
+          - gradle_log
+          - crash_report
+          - plugin_protocol
+          - rest_request
+          - mcp_request
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install nightly Rust
+        run: rustup toolchain install nightly --profile minimal
+
+      - name: Cache fuzz dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            fuzz/target/
+          key: ${{ runner.os }}-fuzz-${{ matrix.target }}-${{ hashFiles('fuzz/Cargo.toml', 'Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-fuzz-${{ matrix.target }}-
+
+      - name: Install cargo-fuzz
+        run: cargo install cargo-fuzz --locked
+
+      - name: Prepare fixture seed corpora
+        run: python3 fuzz/scripts/prepare-corpora.py
+
+      - name: Run target for 10 minutes
+        run: cargo +nightly fuzz run "${{ matrix.target }}" "fuzz/corpus/${{ matrix.target }}" -- -max_total_time=600 -print_final_stats=1
+
+      - name: Upload crash artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuzz-artifacts-${{ matrix.target }}
+          path: fuzz/artifacts/${{ matrix.target }}/
+          if-no-files-found: ignore
+          retention-days: 30

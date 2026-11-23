@@ -1,0 +1,32 @@
+[package]
+name = "ummp-server"
+version = "1.0.0-rc.1"
+edition = "2021"
+description = "Local REST API for Universal Minecraft Mod Porter"
+license = "Apache-2.0"
+
+[features]
+fuzzing = []
+
+[dependencies]
+axum = { version = "0.7", features = ["json"] }
+rmcp = { version = "=3.10.0", features = ["transport-io"] }
+schemars = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+subtle = "2"
+tracing = "0.1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "time", "io-std"] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+uuid = { version = "1", features = ["serde", "v4"] }
+ummp-core = { version = "1.0.0-rc.1", path = "../core" }
+ummp-ai-providers = { version = "1.0.0-rc.1", path = "../providers" }
+
+[dev-dependencies]
+tracing-subscriber = "0.3"
+ureq = "2"
+tempfile = "3"
+
+[lints]
+workspace = true

@@ -1,0 +1,34 @@
+{
+  "pack": {
+    "name": "",
+    "version": "",
+    "format": "folder",
+    "mc": null,
+    "loader": null,
+    "loader_version": null,
+    "root": "",
+    "entries": [
+      {
+        "path": "",
+        "kind": "mod",
+        "sha1": null,
+        "sha512": null,
+        "size": null,
+        "env": {
+          "client": "required",
+          "server": "required"
+        },
+        "downloads": [""],
+        "local": null,
+        "curseforge": null,
+        "mod_info": null,
+        "risk": null,
+        "findings": [],
+        "technologies": [""]
+      }
+    ],
+    "overrides": [""],
+    "warnings": [""]
+  },
+  "issues": [""]
+}

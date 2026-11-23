@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "command": "scan",
+  "result": {
+    "level": null,
+    "findings": [
+      {
+        "rule": "",
+        "severity": "low",
+        "file": "",
+        "evidence": ""
+      }
+    ]
+  }
+}

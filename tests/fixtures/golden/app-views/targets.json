@@ -1,0 +1,4 @@
+{
+  "loaders": ["fabric", "forge"],
+  "versions": [{ "minecraft": "1.20.1", "loaders": ["fabric", "forge"] }]
+}

@@ -1,0 +1,37 @@
+{
+  "session_id": "",
+  "analysis": null,
+  "notes": [""],
+  "proposed": [""],
+  "diffs": [""],
+  "rejected": [
+    {
+      "path": "",
+      "reason": ""
+    }
+  ],
+  "verdicts": [
+    {
+      "path": "",
+      "approve": false,
+      "concerns": [""]
+    }
+  ],
+  "applied": [""],
+  "checkpoint_id": null,
+  "omitted_context": [""],
+  "cost": {
+    "by_agent": {
+      "$map_value": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    },
+    "by_model": {
+      "$map_value": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      }
+    }
+  }
+}

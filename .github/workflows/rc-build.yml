@@ -1,0 +1,45 @@
+name: rc-build (artifacts only, no release)
+on:
+  push:
+    branches: ['ummp/rc-build-*']
+permissions:
+  contents: read
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cargo-dist 0.34.0
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = Windows ]; then
+            powershell -c "irm https://github.com/axodotdev/cargo-dist/releases/download/v0.34.0/cargo-dist-installer.ps1 | iex"
+          else
+            curl --proto '=https' --tlsv1.2 -LsSf https://github.com/axodotdev/cargo-dist/releases/download/v0.34.0/cargo-dist-installer.sh | sh
+          fi
+      - name: dist build (local artifacts)
+        shell: bash
+        run: dist build --artifacts=local --target ${{ matrix.target }} --output-format=json > dist-manifest.json
+      - name: Smoke test the built binary
+        shell: bash
+        run: |
+          ls target/distrib
+          bin=$(find target -type f \( -name ummp -o -name ummp.exe \) -path '*release*' | head -1)
+          echo "binary: $bin"
+          "$bin" --version
+          "$bin" --help | head -20
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ummp-rc-${{ matrix.target }}
+          path: |
+            target/distrib/*
+            dist-manifest.json
+          if-no-files-found: error

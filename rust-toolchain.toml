@@ -1,0 +1,7 @@
+# Pin the toolchain so local runs and CI lint with the same clippy.
+# Floating `stable` broke CI when Rust 1.100 added new lints.
+# Bump deliberately: change the version, run the full CI command set, commit.
+[toolchain]
+channel = "1.97.0"
+components = ["clippy", "rustfmt"]
+profile = "minimal"

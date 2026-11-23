@@ -1,0 +1,233 @@
+name: Universal Minecraft Mod Porter
+description: Analyze, scan, port or build a Minecraft mod in GitHub Actions.
+
+inputs:
+  command:
+    description: UMMP command to run (analyze, scan, port or build).
+    required: true
+  path:
+    description: Project folder or supported input file.
+    required: true
+  to:
+    description: Target Minecraft version (required for port).
+    required: false
+  loader:
+    description: Target mod loader for port (forge, fabric, neoforge or quilt).
+    required: false
+  fail-on-risk:
+    description: Fail when scan risk is high (high), medium or high (medium), or never (none).
+    required: false
+    default: high
+
+outputs:
+  exit-code:
+    description: UMMP process exit code.
+    value: ${{ steps.execute.outputs.exit-code }}
+  report-path:
+    description: Directory containing the JSON result and any generated Markdown reports.
+    value: ${{ steps.execute.outputs.report-path }}
+
+runs:
+  using: composite
+  steps:
+    - name: Install Rust toolchain
+      uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        toolchain: 1.97.0
+        components: clippy,rustfmt
+        cache: false
+
+    - name: Cache Cargo dependencies and build output
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          ${{ runner.temp }}/ummp-target/
+        key: ${{ runner.os }}-ummp-rust-1.97
+        restore-keys: |
+          ${{ runner.os }}-ummp-rust-
+
+    - name: Install UMMP
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      env:
+        CARGO_TARGET_DIR: ${{ runner.temp }}/ummp-target
+      run: |
+        set -euo pipefail
+        # The checked-in workspace lockfile may predate server dependencies.
+        # Regenerate it in the action checkout, then install deterministically.
+        cargo generate-lockfile
+        cargo install --path cli --locked --force --root "$RUNNER_TEMP/ummp-install"
+        echo "$RUNNER_TEMP/ummp-install/bin" >> "$GITHUB_PATH"
+
+    - name: Run UMMP
+      id: execute
+      shell: bash
+      env:
+        INPUT_COMMAND: ${{ inputs.command }}
+        INPUT_PATH: ${{ inputs.path }}
+        INPUT_TO: ${{ inputs.to }}
+        INPUT_LOADER: ${{ inputs.loader }}
+        INPUT_FAIL_ON_RISK: ${{ inputs.fail-on-risk }}
+      run: |
+        set -uo pipefail
+        set +e
+
+        report_dir="$RUNNER_TEMP/ummp-report-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+        result_file="$report_dir/result.json"
+        scan_file="$report_dir/scan.json"
+        mkdir -p "$report_dir"
+
+        exit_code=0
+        fail() {
+          echo "::error::$1"
+          exit_code="$2"
+        }
+        run_cli() {
+          local code=0
+          ummp "$@" --json > "$result_file" || code=$?
+          return "$code"
+        }
+        risk_exceeded() {
+          local level="$1"
+          case "$INPUT_FAIL_ON_RISK:$level" in
+            high:high|medium:medium|medium:high) return 0 ;;
+            none:*|high:low|high:medium|medium:low) return 1 ;;
+            *) return 2 ;;
+          esac
+        }
+
+        case "$INPUT_COMMAND" in
+          analyze|scan|port|build) ;;
+          *) fail "command must be analyze, scan, port or build" 5 ;;
+        esac
+        if [[ -z "$INPUT_PATH" ]]; then
+          fail "path is required" 5
+        fi
+        case "$INPUT_FAIL_ON_RISK" in
+          none|medium|high) ;;
+          *) fail "fail-on-risk must be none, medium or high" 5 ;;
+        esac
+        if [[ "$INPUT_COMMAND" == port && -z "$INPUT_TO" ]]; then
+          fail "to is required when command is port" 5
+        fi
+
+        if [[ "$exit_code" -eq 0 ]]; then
+          if [[ "$INPUT_COMMAND" == scan ]]; then
+            run_cli scan "$INPUT_PATH"
+            scan_code=$?
+            cp "$result_file" "$scan_file"
+            level="$(jq -r '.result.level // "low"' "$result_file" 2>/dev/null | tr '[:upper:]' '[:lower:]')"
+            if [[ "$scan_code" -ne 0 && "$scan_code" -ne 2 ]]; then
+              exit_code="$scan_code"
+            elif risk_exceeded "$level"; then
+              exit_code=2
+            else
+              risk_status=$?
+              if [[ "$risk_status" -eq 2 ]]; then exit_code=1
+              elif [[ "$INPUT_FAIL_ON_RISK" == none ]]; then exit_code=0
+              else exit_code="$scan_code"
+              fi
+            fi
+          else
+            scan_code=0
+            ummp scan "$INPUT_PATH" --json > "$scan_file" || scan_code=$?
+            if [[ "$scan_code" -ne 0 && "$scan_code" -ne 2 ]]; then
+              cp "$scan_file" "$result_file"
+              exit_code="$scan_code"
+            else
+              level="$(jq -r '.result.level // "low"' "$scan_file" 2>/dev/null | tr '[:upper:]' '[:lower:]')"
+              if risk_exceeded "$level"; then
+                cp "$scan_file" "$result_file"
+                exit_code=2
+              else
+                risk_status=$?
+                if [[ "$risk_status" -eq 2 ]]; then
+                  cp "$scan_file" "$result_file"
+                  exit_code=1
+                else
+                  case "$INPUT_COMMAND" in
+                    analyze)
+                      run_cli analyze "$INPUT_PATH"
+                      exit_code=$?
+                      ;;
+                    port)
+                      args=(port "$INPUT_PATH" --to "$INPUT_TO")
+                      if [[ -n "$INPUT_LOADER" ]]; then args+=(--loader "$INPUT_LOADER"); fi
+                      run_cli "${args[@]}"
+                      exit_code=$?
+                      ;;
+                    build)
+                      run_cli build "$INPUT_PATH" --report "$report_dir/build-report.md"
+                      exit_code=$?
+                      ;;
+                  esac
+                fi
+              fi
+            fi
+          fi
+        fi
+
+        if [[ -s "$result_file" ]]; then
+          if jq -e '.result.output' "$result_file" >/dev/null 2>&1; then
+            output_dir="$(jq -r '.result.output // empty' "$result_file")"
+            if [[ -n "$output_dir" && -f "$output_dir/UMMP_REPORT.md" ]]; then
+              cp "$output_dir/UMMP_REPORT.md" "$report_dir/port-report.md"
+            fi
+          fi
+        else
+          printf '{"schema":1,"error":{"kind":"action","message":"UMMP did not produce a result"}}\n' > "$result_file"
+          if [[ "$exit_code" -eq 0 ]]; then exit_code=1; fi
+        fi
+
+        {
+          echo "## Universal Minecraft Mod Porter"
+          echo
+          echo "- Command: `$INPUT_COMMAND`"
+          echo "- Exit code: `$exit_code`"
+          if jq -e '.result.level' "$result_file" >/dev/null 2>&1; then
+            echo "- Risk: **$(jq -r '.result.level' "$result_file")**"
+            echo "- Findings: $(jq '.result.findings | length' "$result_file")"
+          elif jq -e '.error' "$result_file" >/dev/null 2>&1; then
+            echo "- Error: $(jq -r '.error.message' "$result_file")"
+          fi
+          if [[ -f "$report_dir/build-report.md" ]]; then
+            echo
+            cat "$report_dir/build-report.md"
+          elif [[ -f "$report_dir/port-report.md" ]]; then
+            echo
+            cat "$report_dir/port-report.md"
+          else
+            echo
+            echo 'Result payload:'
+            echo '```json'
+            jq -c '.result // .error' "$result_file"
+            echo '```'
+          fi
+        } >> "$GITHUB_STEP_SUMMARY"
+
+        echo "exit-code=$exit_code" >> "$GITHUB_OUTPUT"
+        echo "report-path=$report_dir" >> "$GITHUB_OUTPUT"
+
+    - name: Upload UMMP report
+      if: always() && steps.execute.outputs.report-path != ''
+      uses: actions/upload-artifact@v4
+      with:
+        name: ummp-report-${{ github.run_id }}-${{ github.run_attempt }}
+        path: ${{ steps.execute.outputs.report-path }}/
+        if-no-files-found: error
+
+    - name: Apply UMMP exit code
+      if: always()
+      shell: bash
+      env:
+        UMMP_EXIT_CODE: ${{ steps.execute.outputs.exit-code }}
+      run: |
+        if [[ -z "$UMMP_EXIT_CODE" ]]; then
+          echo "::error::UMMP did not publish an exit code"
+          exit 1
+        fi
+        exit "$UMMP_EXIT_CODE"

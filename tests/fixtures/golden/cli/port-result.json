@@ -1,0 +1,15 @@
+{
+  "output": "",
+  "zip": null,
+  "report": {
+    "files_changed": 0,
+    "replacements": 0,
+    "moves": 0,
+    "deletes": 0,
+    "skipped_mappings": 0,
+    "breaking_changes": 0,
+    "warnings": [""],
+    "technologies": [],
+    "checkpoint_id": ""
+  }
+}

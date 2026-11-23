@@ -1,0 +1,24 @@
+{
+  "kind": "",
+  "mods": [
+    {
+      "id": "",
+      "name": "",
+      "version": "",
+      "loader": "",
+      "minecraft": "",
+      "java": null
+    }
+  ],
+  "build_system": "Gradle",
+  "languages": [],
+  "technologies": [
+    {
+      "tech": "",
+      "handling": "auto",
+      "file": "",
+      "line": null,
+      "message": ""
+    }
+  ]
+}

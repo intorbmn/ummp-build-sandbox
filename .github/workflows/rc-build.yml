@@ -28,14 +28,22 @@ jobs:
       - name: dist build (local artifacts)
         shell: bash
         run: dist build --artifacts=local --target ${{ matrix.target }} --output-format=json > dist-manifest.json
-      - name: Smoke test the built binary
+      - name: Smoke test the built archive
         shell: bash
         run: |
-          ls target/distrib
-          bin=$(find target -type f \( -name ummp -o -name ummp.exe \) -path '*release*' | head -1)
+          ls -la target/distrib
+          mkdir smoke && cd smoke
+          if [ "$RUNNER_OS" = Windows ]; then
+            unzip -q ../target/distrib/ummp-${{ matrix.target }}.zip
+          else
+            tar -xzf ../target/distrib/ummp-${{ matrix.target }}.tar.gz
+          fi
+          find . -maxdepth 3 -type f | sort
+          bin=$(find . -type f \( -name ummp -o -name ummp.exe \) | head -1)
           echo "binary: $bin"
           "$bin" --version
           "$bin" --help | head -20
+          test -n "$(find . -name LICENSE)"
       - uses: actions/upload-artifact@v4
         with:
           name: ummp-rc-${{ matrix.target }}

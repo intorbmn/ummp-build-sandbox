@@ -14,5 +14,5 @@ windows-archive = ".zip"
 unix-archive = ".tar.gz"
 install-path = "CARGO_HOME"
 auto-includes = true
-allow-dirty = ["ci", "msi"]
+allow-dirty = ["ci"]
 pr-run-mode = "plan"

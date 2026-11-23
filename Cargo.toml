@@ -34,3 +34,7 @@ doc_markdown = "allow"
 manual_string_new = "allow"
 implicit_hasher = "allow"
 redundant_closure_for_method_calls = "allow"
+# Required by cargo-dist (`dist build` uses `--profile dist`); see dist-workspace.toml.
+[profile.dist]
+inherits = "release"
+lto = "thin"
